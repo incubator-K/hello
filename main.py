@@ -13,4 +13,19 @@ def print_hi(name):
 if __name__ == '__main__':
     print_hi('PyCharm')
 
+
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
+lowest = 50
+highest = 70
+
+def fengshan(tem,lenth):
+    siz = int((highest-lowest)/lenth)
+    tems = range(lowest,highest,siz)
+    i=0
+    while True:
+        print(tems[i])
+        i+=1
+        if i>= lenth:
+            break
+    pass
+fengshan(50,10)
