@@ -12,11 +12,11 @@ def createJson(eqName):
         w.write("\"%s\":{\n" % eqName)
         datas = r.readlines()
         for data in datas:
-            nameAndValue = data.split("/")
+            data = data.replace("\t", " ").replace("\n", "")
+            nameAndValue = data.split(" ")
             name = ""
             value = ""
             for item in nameAndValue:
-                item = item.replace(" ","").replace("\n","")
                 res = re.match("[a-zA-Z0-9_#]{1,}", item)
                 if is_Chinese(item):
                     name = item
