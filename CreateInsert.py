@@ -1,6 +1,7 @@
 import random
 import TimeListTest
 
+
 class VarValue:
     def __init__(self, varName):
         self.varName = varName
@@ -26,7 +27,8 @@ def insertStrCurretCreste(projectName, eqName, i):
             insertStr = "INSERT INTO [dbo].[VarableHistory]  ([Id] ,[ProjectName],[EQName],[VarName],[VarValue]" \
                         ",[SaveTime]) " \
                         "VALUES({},'{}','{}','{}','{}','{}');\n".format(i, projectName, eqName, myVarName,
-                                                                       myVarValue.varValue, TimeListTest.getRadomTime())
+                                                                        myVarValue.varValue,
+                                                                        TimeListTest.getRadomTime())
             i += 1
             w.write(insertStr)
             pass
@@ -36,8 +38,6 @@ def insertStrCurretCreste(projectName, eqName, i):
 
 
 a = insertStrCurretCreste("上海", "喂料机1", 141)
-b = insertStrCurretCreste("西安","喂料机1",a)
-c = insertStrCurretCreste("上海","喂料机2",b)
-d = insertStrCurretCreste("西安","喂料机2",c)
-
-
+b = insertStrCurretCreste("西安", "喂料机1", a)
+c = insertStrCurretCreste("上海", "喂料机2", b)
+d = insertStrCurretCreste("西安", "喂料机2", c)

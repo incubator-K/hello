@@ -17,7 +17,7 @@ def createJson(eqName):
             name = ""
             value = ""
             for item in nameAndValue:
-                res = re.match("[a-zA-Z0-9_#]{1,}", item)
+                res = re.match("[a-zA-Z0-9_#]+", item)
                 if is_Chinese(item):
                     name = item
                     pass
